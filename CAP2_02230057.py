@@ -66,7 +66,7 @@ class Bank:
 def main():
     bank = Bank() #Initialize a Banl object to manage accounts.
 
-    while True: # This the main loop tokeep the program running until the user chooses to exit.
+    while True: # This the main loop to keep the program running until the user chooses to exit.
         choice = input("\n1. Open Account\n2. Login\n3. Exit\nEnter your choice: ") # It is the display for the user to get user choice.
 
         if choice == "1":
