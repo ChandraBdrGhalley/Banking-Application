@@ -13,8 +13,8 @@
 
 import random # This imported random module provides functions for generating random numbers, selecting random elements from a sequence , range and more.
 
-class Account:
-    def __init__(self, account_number, password, account_type):
+class Account: # The account class models a bank account with basic attributes and operation
+    def __init__(self, account_number, password, account_type): # Here it initializes the account with different parameters
         self.account_number = account_number
         self.password = password 
         self.account_type = account_type
@@ -22,10 +22,10 @@ class Account:
 
     def deposit(self, amount):
         if amount > 0:
-            self.balance += amount # Add the deposite amount to the balance
-            print(f"Deposited Nu.{amount:.2f}. New balance: Nu.{self.balance:.2f}")
+            self.balance += amount # Add the deposited amount to the balance
+            print(f"Deposited Nu.{amount:.2f}. New balance: Nu.{self.balance:.2f}") # It displays the deposited and current balance.
         else:
-            print("Invalid deposit amount.")
+            print("Invalid deposit amount.") 
 
     def withdraw(self, amount):
         if 0 < amount <= self.balance:
@@ -53,7 +53,7 @@ class Bank:
         account_number = str(random.randint(100000, 999999))# From this range it generates the random account number
         password = str(random.randint(1000, 9999))# From this range it generates the random password
         self.accounts[account_number] = Account(account_number, password, account_type) # It stores the new account information
-        print(f"Account created. Account Number: {account_number}, Password: {password}")
+        print(f"Account created. Account Number: {account_number}, Password: {password}") # It displays the out put.
 
     def login(self, account_number, password):
         account = self.accounts.get(account_number)
@@ -80,7 +80,7 @@ def main():
             password = input("Enter password: ")
             account = bank.login(account_number, password)
             if account:
-                while True:
+                while True: 
                     user_choice = input("\n1. Check Balance\n2. Deposit\n3. Withdraw\n4. Transfer\n5. Logout\nEnter your choice: ")
                     if user_choice == "1":
                         account.check_balance()
